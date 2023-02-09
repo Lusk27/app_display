@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-st.image('/Users/luskenterprises/consulting/app_display/Data/Screen Shot 2023-02-09 at 3.31.09 PM.png')
+st.set_page_config(page_title="Futures Charts", page_icon="📈")
+
+st.write('This page will have the same infomation from the powerbi page')
 
 
