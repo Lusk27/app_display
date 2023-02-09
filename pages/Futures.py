@@ -1,4 +1,6 @@
 import streamlit as st
 import pandas as pd
 
-df = pd.read_csv("/Users/luskenterprises/consulting/app_display/Data/Wheat Futures.xlsx - Data.csv")
+st.image('/Users/luskenterprises/consulting/app_display/Data/Screen Shot 2023-02-09 at 3.31.09 PM.png')
+
+
