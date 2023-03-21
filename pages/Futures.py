@@ -7,7 +7,7 @@ st.set_page_config(page_title="Futures Charts", page_icon="📈")
 st.write('This page will have the same infomation from the powerbi page')
 
 
-df =pd.read_csv('Lusk27/app_display/Data/test.csv')
+df =pd.read_csv('Data/test.csv')
 
 
 st.table(df)
