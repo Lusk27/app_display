@@ -4,7 +4,7 @@ import pandas as pd
 st.set_page_config(page_title="Wheat Charts", page_icon="🌾")
 
 st.write("This will have the wheat infomation")
-df= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/wheat_prices.csv')
+df= pd.read_csv('https://raw.githubusercontent.com/Lusk27/app_display/main/Data/wheat_prices.csv?token=GHSAT0AAAAAAB5X2LK3OIT6FOGQOJBDSUMMZA3SQRQ')
 CITY = st.selectbox(
     'Select a City',
     ('Rexburg / Ririe','Idaho Falls','Blackfoot / Pocatello','Grace / Soda Springs','Burley / Rupert','Meridian',
@@ -27,9 +27,9 @@ df_pivot['Standard Deviation'] = df_pivot.std(axis=1)
 
 st.dataframe(df_pivot)
 
-YEAR = st.selectbox(
-    'Select a Year',
-    (2016.0,2017.0,2018.0,2019.0,2020.0,2021.0,2022.0,2023.0)
+METRIC = st.selectbox(
+    'Metric',
+    ("Max","Min","Average","Median","Standard Deviation")
 )
-chart = df.query('Year == @YEAR')
-st.line_chart(data=chart, y='Value', x="Week")
+
+st.line_chart(data=df_pivot, y=METRIC)
