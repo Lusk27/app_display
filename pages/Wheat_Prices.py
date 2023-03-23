@@ -4,7 +4,12 @@ import pandas as pd
 st.set_page_config(page_title="Wheat Charts", page_icon="🌾")
 
 st.write("This will have the wheat infomation")
-df= pd.read_csv('https://raw.githubusercontent.com/Lusk27/app_display/main/Data/wheat_prices.csv?token=GHSAT0AAAAAAB5X2LK3OIT6FOGQOJBDSUMMZA3SQRQ')
+
+
+
+df= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/wheat_prices.csv')
+
+#st.download_button("Download Data", df)
 CITY = st.selectbox(
     'Select a City',
     ('Rexburg / Ririe','Idaho Falls','Blackfoot / Pocatello','Grace / Soda Springs','Burley / Rupert','Meridian',
