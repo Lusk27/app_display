@@ -32,9 +32,17 @@ df_pivot['Standard Deviation'] = df_pivot.std(axis=1)
 
 st.dataframe(df_pivot)
 
-METRIC = st.selectbox(
-    'Metric',
-    ("Max","Min","Average","Median","Standard Deviation")
+#METRIC = st.selectbox(
+#    'Metric',
+#    ("Max","Min","Average","Median","Standard Deviation")
+#)
+
+METRIC = st.multiselect('Select One',
+['Average','Median', 'Max', 'Min', 'Standard Deviation'],
+['Median']
 )
 
-st.line_chart(data=df_pivot, y=METRIC)
+chart = df_pivot[METRIC]
+
+
+st.line_chart(data=chart)
