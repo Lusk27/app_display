@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-cash= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/FULL_CASH.csv?token=GHSAT0AAAAAAB5X2LK3UL63Y7VP2DTH3OC4ZBMUNPQ')
-future= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/Future_O_Wheat_real.csv?token=GHSAT0AAAAAAB5X2LK2OAUDTXCFPF2PO73EZBMUQJA')
+cash= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/FULL_CASH.csv')
+future= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/Future_O_Wheat_real.csv')
 
 FUTURE_TYPE = st.selectbox(
     'Select a Type of Future',
@@ -28,12 +28,12 @@ merged_df = concatenated_df = pd.concat([cash_tb.set_index(['Year', 'Week']),
                             axis=1)
 
 merged_df['Basis'] = merged_df['cash'] - merged_df['future']
+st.dataframe(merged_df)
+# df_pivot = merged_df.pivot(index='Week', columns=['Year', 'Attribute', 'Location'], values='Value')
+# df_pivot['Average'] = df_pivot.mean(axis=1)
+# df_pivot['Median'] = df_pivot.median(axis=1)
+# df_pivot['Max'] = df_pivot.max(axis=1)
+# df_pivot['Min'] = df_pivot.min(axis=1)
+# df_pivot['Standard Deviation'] = df_pivot.std(axis=1)
 
-df_pivot = merged_df.pivot(index='Week', columns=['Year', 'Attribute', 'Location'], values='Value')
-df_pivot['Average'] = df_pivot.mean(axis=1)
-df_pivot['Median'] = df_pivot.median(axis=1)
-df_pivot['Max'] = df_pivot.max(axis=1)
-df_pivot['Min'] = df_pivot.min(axis=1)
-df_pivot['Standard Deviation'] = df_pivot.std(axis=1)
-
-st.dataframe(df_pivot)
+# st.dataframe(df_pivot)
