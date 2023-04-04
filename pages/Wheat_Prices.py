@@ -3,11 +3,12 @@ import pandas as pd
 
 st.set_page_config(page_title="Wheat Charts", page_icon="🌾")
 
-st.write("This will have the wheat infomation")
+
+st.title("Cash Prices")
+st.write("Below is the cash price for wheat in different strands in different parts of the state. Select the region and strand you are interested in and the table and the chart will adjust to your input. This data is separated into rows by week of the year. In many areas and strands there is no information recorded, but for every week there should be an aggregate value for referance")
 
 
-
-df= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/wheat_prices.csv')
+df= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/FULL_CASH.csv?token=GHSAT0AAAAAAB5X2LK3UL63Y7VP2DTH3OC4ZBMUNPQ')
 
 #st.download_button("Download Data", df)
 CITY = st.selectbox(
@@ -37,7 +38,7 @@ st.dataframe(df_pivot)
 #    ("Max","Min","Average","Median","Standard Deviation")
 #)
 
-METRIC = st.multiselect('Select One',
+METRIC = st.multiselect('Select One or Many',
 ['Average','Median', 'Max', 'Min', 'Standard Deviation'],
 ['Median']
 )
