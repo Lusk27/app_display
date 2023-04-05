@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 import plotly.figure_factory as ff
+st.title('Futures')
 
-
-df= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/Future_O_Wheat_real.csv?token=GHSAT0AAAAAAB5X2LK2OAUDTXCFPF2PO73EZBMUQJA')
+df= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/Future_O_Wheat_real.csv?token=GHSAT0AAAAAAB5X2LK22HHECHVSCPAPVFXIZBMXI6Q')
 
 ATTRIBUTE = st.selectbox(
     'Select a Type',
@@ -25,6 +25,9 @@ METRIC = st.multiselect('Select One or Many',
 )
 
 chart = future_pivot[METRIC]
+st.subheader('Charted over the Year')
+st.write("Seelct which metrics you want to see, you can select multiple")
+
 
 st.line_chart(data=chart)
 
