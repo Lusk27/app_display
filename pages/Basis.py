@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 
-cash= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/FULL_CASH.csv')
-future= pd.read_csv('/Users/luskenterprises/consulting/app_display/Data/Future_O_Wheat_real.csv')
+cash= pd.read_csv('https://raw.githubusercontent.com/Lusk27/app_display/main/Data/FULL_CASH.csv')
+future= pd.read_csv('https://raw.githubusercontent.com/Lusk27/app_display/main/Data/Future_O_Wheat_real.csv')
 
 st.title("Basis")
 st.write("The Basis is the differnece between the cash price and the future price, so the higher this number the greater advantage for the vender. This Number can be positive or negitive depending if the future is less than or grater than the cash price")

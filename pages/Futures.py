@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.figure_factory as ff
 st.title('Futures')
 
-df= pd.read_csv('https://raw.githubusercontent.com/BYUIDSconsulting/agecon_slade_fa22/master/personal_folders/trey_lusk/Data/Future_O_Wheat_real.csv?token=GHSAT0AAAAAAB5X2LK22HHECHVSCPAPVFXIZBMXI6Q')
+df= pd.read_csv('https://raw.githubusercontent.com/Lusk27/app_display/main/Data/Future_O_Wheat_real.csv')
 
 ATTRIBUTE = st.selectbox(
     'Select a Type',
