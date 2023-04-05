@@ -31,3 +31,10 @@ st.write("Seelct which metrics you want to see, you can select multiple")
 
 st.line_chart(data=chart)
 
+
+
+def link_to_github():
+    href = '<a href="https://raw.githubusercontent.com/Lusk27/app_display/main/Data/Future_O_Wheat_real.csv" target="_blank">Link to GitHub</a>'
+    return href
+
+st.markdown(link_to_github(), unsafe_allow_html=True)

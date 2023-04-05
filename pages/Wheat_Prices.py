@@ -50,3 +50,9 @@ chart = df_pivot[METRIC]
 
 
 st.line_chart(data=chart)
+
+def link_to_github():
+    href = '<a href="https://github.com/Lusk27/app_display/tree/main/Data" target="_blank">Link to GitHub</a>'
+    return href
+
+st.markdown(link_to_github(), unsafe_allow_html=True)

@@ -72,3 +72,10 @@ week_value = merged_df.loc[(merged_df['Week'] == week) & (merged_df['Year'] == y
 chart_data = pd.DataFrame({'Basis': [week_value, mean_value, min_value, max_value],
                            'category': ['Week Value', 'Mean', 'Min', 'Max']})
 st.bar_chart(chart_data.set_index('category'))
+
+
+def link_to_github():
+    href = '<a href="https://github.com/Lusk27/app_display/tree/main/Data" target="_blank">Link to GitHub</a>'
+    return href
+
+st.markdown(link_to_github(), unsafe_allow_html=True)
